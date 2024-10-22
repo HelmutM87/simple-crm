@@ -64,7 +64,7 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs'; // Um die Daten zu abonnieren
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface User {
   firstName: string;
@@ -93,11 +93,13 @@ interface User {
 export class UserComponent {
   users$: Observable<any[]> | undefined;
   allUsers: User[] = [];
+  // userId = '';
 
-  constructor(
+
+  constructor( private route:ActivatedRoute,
     public dialog: MatDialog, 
     private firestore: Firestore,
-    private router: Router // Füge den Router hinzu
+    private router: Router 
   ) {}
 
   ngOnInit(): void {
@@ -112,6 +114,10 @@ export class UserComponent {
       console.log('Empfangene Änderungen aus der DB:', changes);
       this.allUsers = changes;
     });
+
+  //   this.route.paramMap.subscribe( paramMap => {
+  //      this.userId = paramMap.get('bank');
+  // })
   }
 
   openDialog() {

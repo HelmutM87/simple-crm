@@ -5,14 +5,16 @@ export class User {
     street: string;
     zipCode: number;
     city: string;
+    email: string;
 
     constructor(obj?: any) {
         this.firstName = obj ? obj.firstName : '';
-        this.lastName = obj ? obj.firstName : '';
-        this.birthDate = obj ? obj.firstName : '';
-        this.street = obj ? obj.firstName : '';
-        this.zipCode = obj ? obj.firstName : '';
-        this.city = obj ? obj.firstName : '';
+        this.lastName = obj ? obj.laststName : '';
+        this.birthDate = obj ? obj.birthDate : '';
+        this.street = obj ? obj.street : '';
+        this.zipCode = obj ? obj.zipCode : '';
+        this.city = obj ? obj.city : '';
+        this.email = obj ? obj.email : '';
     }
 
     /**
@@ -25,7 +27,8 @@ export class User {
             birthDate: this.birthDate,
             street: this.street,
             zipCode: this.zipCode,
-            city: this.city
+            city: this.city,
+            email: this.email
         };
     }
 }
