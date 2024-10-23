@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
@@ -18,11 +19,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatToolbarModule, 
     MatSidenavModule,
     MatIconModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    BrowserAnimationsModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'simple-crm';
 }
